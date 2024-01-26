@@ -3,19 +3,19 @@
 using namespace std;
 
 int main() {
-    int N, M, num;
-    unordered_set<int> numbers;
+    int N, M, tmp;
+    unordered_set<int> A;
 
     scanf("%d", &N);
     for (int i = 0; i < N; ++i) {
-        scanf("%d", &num);
-        numbers.insert(num);
+        scanf("%d", &tmp);
+        A.insert(tmp);
     }
 
     scanf("%d", &M);
     for (int i = 0; i < M; ++i) {
-        scanf("%d", &num);
-        if (numbers.find(num) != numbers.end())
+        scanf("%d", &tmp);
+        if (A.find(tmp) != A.end())
             printf("1\n");
         else
             printf("0\n");
