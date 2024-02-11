@@ -3,12 +3,9 @@
 #include <algorithm>
 using namespace std;
 int symDifOfSet(vector<int> x, vector<int> y){
+    int cnt = 0, i = 0, j = 0;
     sort(x.begin(), x.end());
     sort(y.begin(), y.end());
-
-    int cnt = 0;
-    int i = 0, j = 0;
-    
     while (i < x.size() && j < y.size()) {
         if (x[i] < y[j]) {
             cnt++;
