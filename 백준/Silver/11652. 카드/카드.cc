@@ -1,31 +1,22 @@
 #include <iostream>
 #include <unordered_map>
 #include <climits>
-
 using namespace std;
-
 int main() {
-    int N;
+    int N = 0, maxCount = 0;    
+    unordered_map<long long, int> card;
+    long long tmp = 0, index = LLONG_MAX;
     cin >> N;
-
-    unordered_map<long long, int> cardCount;
-
-    long long num;
     for (int i = 0; i < N; ++i) {
-        cin >> num;
-        cardCount[num]++;
+        cin >> tmp;
+        card[tmp]++;
     }
-
-    long long mostFrequentNumber = LLONG_MAX;
-    int maxCount = 0;
-    for (const auto& pair : cardCount) {
-        if (pair.second > maxCount || (pair.second == maxCount && pair.first < mostFrequentNumber)) {
+    for (const auto& pair : card) {
+        if (pair.second > maxCount || (pair.second == maxCount && pair.first < index)) {
             maxCount = pair.second;
-            mostFrequentNumber = pair.first;
+            index = pair.first;
         }
     }
-
-    cout << mostFrequentNumber << endl;
-
+    cout << index << endl;
     return 0;
 }
