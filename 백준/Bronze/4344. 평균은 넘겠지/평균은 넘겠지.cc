@@ -4,8 +4,8 @@ using namespace std;
 
 int main() 
 {
-    int C = 0, N = 0, tmp = 0;
-    double avg = 0, cnt = 0, sum = 0;
+    int C = 0, N = 0, tmp = 0, sum = 0;
+    double avg = 0, cnt = 0;
     cin >> C;
     while(C--){
       cin >> N;
