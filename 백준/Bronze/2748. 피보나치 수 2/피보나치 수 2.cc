@@ -6,7 +6,7 @@ int main()
 {
     int n = 0;
     cin >> n;
-    vector<long long> fib(n+1);
+    vector<long> fib(n+1);
     
     fib[0] = 0;
     fib[1] = 1;
