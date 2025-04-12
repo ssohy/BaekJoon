@@ -9,6 +9,7 @@ int main()
     int n;
     string name = "", status = "";
     map<string, string> log;
+    vector<string> inside;
     cin >> n;
     
     for (int i = 0; i < n; i++) {
@@ -16,7 +17,7 @@ int main()
         log[name] = status;
     }
 
-    vector<string> inside;
+    
     for (auto& entry : log) {
         if (entry.second == "enter") {
             inside.push_back(entry.first);
