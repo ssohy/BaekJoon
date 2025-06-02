@@ -26,7 +26,7 @@ int main()
     }
 
     cout << maxLen << '\n';
-    for (size_t i = 0; i < maxArr.size(); i++) {
+    for (int i = 0; i < maxArr.size(); i++) {
         cout << maxArr[i];
         if (i != maxArr.size() - 1) cout << ' ';
     }
