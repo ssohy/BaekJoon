@@ -1,42 +1,30 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() 
-{
-    int N = 0, max = -1;
-    string name = "";
-    vector<pair<string, int>> best;
-    vector<string> maxName;
-    bool found = false;
+int main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+    int N = 0, maxCnt = 0;
+    string name = "", answer = "";
+    unordered_map<string,int> best;
     cin >> N;
-    while(N--){
-      cin >> name;
-      found = false;
-      for(int i = 0; i < best.size(); i++){
-          if(best[i].first == name){
-              best[i].second++;
-              found = true;
-              break;
-          }
-      }
-      if(!found) 
-        best.push_back(make_pair(name, 1));
+
+    best.reserve(N * 2);
+
+    while (N--) {
+        cin >> name;
+        best[name]++;
     }
-    
-    for(int i = 0; i < best.size(); i++){
-      if(max < best[i].second)
-        max = best[i].second;
+
+    for (const auto &i : best) {
+        const string &str = i.first;
+        int cnt = i.second;
+        if (cnt > maxCnt || (cnt == maxCnt && str < answer)) {
+            maxCnt = cnt;
+            answer = str;
+        }
     }
-    
-    for(int i = 0; i < best.size(); i++){
-      if(max == best[i].second)
-        maxName.push_back(best[i].first);
-    }
-    
-    sort(maxName.begin(), maxName.end());
-    
-    cout << maxName[0] << '\n';
+    cout << answer << '\n';
     return 0;
 }
