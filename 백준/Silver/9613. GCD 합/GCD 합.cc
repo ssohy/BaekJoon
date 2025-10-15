@@ -9,7 +9,7 @@ int main()
     cin >> t;
     while(t--){
       cin >> n;
-      vector<long long> arr(n);
+      vector<int> arr(n);
       long long sum = 0;
       for(int i = 0; i < n; i++){
         cin >> arr[i];
